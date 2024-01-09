@@ -64,9 +64,9 @@ class CarController:
   def calc_pedal_command(accel: float, long_active: bool, car_velocity) -> float:
     if not long_active: return 0.
     # Boltpilot pedal
-    accGain = 0.5  # This value is the result of testing by several users.
-    DecelZero = interp(car_velocity, [0., 3, 10, 15, 30], [0.08, 0.185, 0.245, 0.255, 0.280])
-    AccelZero = interp(car_velocity, [0., 3, 10, 15, 30], [0.08, 0.130, 0.185, 0.215, 0.280])
+    accGain = 1.0  # This value is the result of testing by several users.
+    DecelZero = interp(car_velocity, [0., 3, 10, 15, 30], [0.0, 0.185, 0.245, 0.255, 0.280])
+    AccelZero = interp(car_velocity, [0., 3, 10, 15, 30], [0.0, 0.130, 0.185, 0.215, 0.280])
     ZeroRatio = interp(accel, [-3.5, 2.0], [1.0, 0.0])
     zero = DecelZero * ZeroRatio + AccelZero * (1 - ZeroRatio)
   
