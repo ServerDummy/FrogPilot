@@ -69,10 +69,8 @@ class CarController:
     AccelZero = interp(car_velocity, [0., 3, 10, 15, 30], [0.08, 0.130, 0.185, 0.215, 0.280])
     ZeroRatio = interp(accel, [-3.5, 2.0], [1.0, 0.0])
     zero = DecelZero * ZeroRatio + AccelZero * (1 - ZeroRatio)
-    if accel > 0:
-      pedal_gas = clip((zero + accel * accGain), 0.0, 1.0)
-    else:
-      pedal_gas = clip((zero + accel * accGain), 0.0, 0.2)
+  
+    pedal_gas = clip((zero + accel * accGain), 0.0, 1.0)
 
     return pedal_gas
 
