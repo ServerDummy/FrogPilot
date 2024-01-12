@@ -1475,7 +1475,7 @@ void AnnotatedCameraWidget::drawLeadInfo(QPainter &p) {
 
   // Calculate the entire text width to ensure perfect centering
   const int totalTextWidth = p.fontMetrics().horizontalAdvance(accelText)
-                           + p.fontMetrics().horizontalAdvance(maxAccSuffix)
+//                           + p.fontMetrics().horizontalAdvance(maxAccSuffix)
                            + p.fontMetrics().horizontalAdvance(obstacleText)
                            + p.fontMetrics().horizontalAdvance(createDiffText(obstacleDistance, obstacleDistanceStock))
                            + p.fontMetrics().horizontalAdvance(stopText)
@@ -1492,7 +1492,7 @@ void AnnotatedCameraWidget::drawLeadInfo(QPainter &p) {
   };
 
   drawText(accelText, Qt::white);
-  drawText(maxAccSuffix, isFiveSecondsPassed ? Qt::white : Qt::red);
+//  drawText(maxAccSuffix, isFiveSecondsPassed ? Qt::white : Qt::red);
   drawText(obstacleText, Qt::white);
   drawText(createDiffText(obstacleDistance, obstacleDistanceStock), (obstacleDistance - obstacleDistanceStock) > 0 ? Qt::green : Qt::red);
   drawText(stopText, Qt::white);
