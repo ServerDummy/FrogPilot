@@ -1419,7 +1419,7 @@ void AnnotatedCameraWidget::drawLeadInfo(QPainter &p) {
   // Update acceleration
   const double currentAcceleration = std::round(sm["carState"].getCarState().getAEgo() * 100) / 100;
   const double actuatorsAccel = sm["carControl"].getCarControl().getActuators().getAccel();
-  const double actuatorspedal = sm["carControl"].getCarControl().getActuators().getcommaPedal();
+//  const double actuatorspedal = sm["carControl"].getCarControl().getActuators().getcommaPedal();
   static double maxAcceleration = 0.0;
 
   if (currentAcceleration > maxAcceleration && status == STATUS_ENGAGED) {
@@ -1448,8 +1448,8 @@ void AnnotatedCameraWidget::drawLeadInfo(QPainter &p) {
   const QString accelText = QString("Accel: %1")
     .arg(actuatorsAccel , 0, 'f', 3);
 
-  const QString accelText = QString("Pedal: %1")
-    .arg(actuatorspedal , 0, 'f', 3);
+//  const QString accelText = QString("Pedal: %1")
+//    .arg(actuatorspedal , 0, 'f', 3);
 
   const QString obstacleText = createText(mapOpen ? " | Obstacle: " : "  |  Obstacle Factor: ", obstacleDistance);
   const QString stopText = createText(mapOpen ? " - Stop: " : "  -  Stop Factor: ", stoppedEquivalence);
