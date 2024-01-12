@@ -70,6 +70,8 @@ class CarController:
       pedaloffset = interp(car_velocity, [0., 3, 6, 30], [0.15, 0.190, 0.22, 0.280])
   
     pedal_gas = clip((pedaloffset + accel), 0.0, 1.0)
+    actuators.commaPedal = pedal_gas
+    actuators.Pedaloffset = pedaloffset
 
     return pedal_gas
 
