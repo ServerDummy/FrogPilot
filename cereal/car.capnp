@@ -358,8 +358,7 @@ struct CarControl {
     accel @4: Float32; # m/s^2
     longControlState @5: LongControlState;
     regenPaddle @9: Bool;
-    Pedaloffset @10: Float32;
-    commaPedal @11: Float32;
+    commaPedal @10: Float32;
 
     enum LongControlState @0xe40f3a917d908282{
       off @0;

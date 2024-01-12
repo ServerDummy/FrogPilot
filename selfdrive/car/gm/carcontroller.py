@@ -71,7 +71,6 @@ class CarController:
   
     pedal_gas = clip((pedaloffset + accel), 0.0, 1.0)
     actuators.commaPedal = pedal_gas
-    actuators.Pedaloffset = pedaloffset
 
     return pedal_gas
 
