@@ -1443,7 +1443,6 @@ void AnnotatedCameraWidget::drawLeadInfo(QPainter &p) {
 //    .arg(maxAcceleration * speedConversion, 0, 'f', 2)
 //    .arg(unit_a);
 
-
   // Create segments for pedal and accel of BoltEV
   const QString accelText = QString("Accel: %1")
     .arg(actuatorsAccel , 0, 'f', 3);
